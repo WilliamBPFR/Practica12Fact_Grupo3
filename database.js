@@ -1,7 +1,7 @@
 const mongooseClient = require("mongoose");
-
+const config = require("./config.json");
 mongooseClient.connect(
-  "mongodb://root:example@localhost:27017/",
+  config.databaseURL,
   { useNewUrlParser: true, useUnifiedTopology: true },
   (err) => {
     if (err) console.log(err);
